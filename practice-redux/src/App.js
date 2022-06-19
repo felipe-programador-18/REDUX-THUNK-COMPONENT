@@ -6,6 +6,7 @@ import {Logger} from 'redux-logger'
 import {configureStore} from '@reduxjs/toolkit'
 import reducer from './reducers/index'
 import Info from './Info';
+import OtherThing from './OtherThing';
 
 //create all store!!!
 const store = configureStore({
@@ -21,6 +22,7 @@ class App extends Component {
       <h1>Practice little bit about redux!!</h1>
     </div>
     <Info/>
+    <OtherThing/>
     </Provider>
   );
 
