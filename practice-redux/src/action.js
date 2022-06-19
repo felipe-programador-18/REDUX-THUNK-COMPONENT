@@ -35,3 +35,42 @@ export const loaldata = () => {
     .catch( () => dispatch(loadallError()) )
   }
 }
+
+
+
+
+/// now create another way to adding another api
+
+export const loadaanotherRequest = () => {
+    return{
+        type: 'LOAD_ANOTHER_REQUEST'
+    }
+}
+
+export const loadanotherError = () => {
+    return {
+        type:'LOAD_ANOTHER_ERROR'
+    }
+}
+
+export const loadanotherDataSucess = (data) => {
+    return {
+        type: 'LOAD_ANOTHER_DATA',
+        data: data
+    }
+}
+
+
+export const getAllApi = (axios) => { 
+   return dispatch => {
+    dispatch(loadaanotherRequest() )
+    axios
+    .get("https://randomuser.me/api/?results=100")
+    .then(({data}) => dispatch(loadanotherDataSucess(data)) )
+    .catch(() =>  dispatch(loadanotherError) )
+   }
+}
+
+export default {
+    getAllApi: getAllApi.bind(null, axios)
+}
