@@ -1,5 +1,5 @@
 import { combineReducers } from "redux"
 import ip from './ip'
-
-export default combineReducers({ip})
+import ua from "./ua"
+export default combineReducers({ip, ua})
 
